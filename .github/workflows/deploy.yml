@@ -25,4 +25,5 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
-            echo "12345678" | ansible-playbook -i playbook/nginx-pb.yml --vault-password-file /dev/stdin
+            echo "12345678" | sudo ansible-playbook -i playbook/inventory playbook/nginx-pb.yml --ask-vault-pass
+            
